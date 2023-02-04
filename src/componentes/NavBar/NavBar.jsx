@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap"
 import { Link, NavLink } from "react-router-dom"
 import { CartWiget } from "../CartWidget/CartWidget"
-
+import { Contenedor } from "../Contenedor/Contenedor"
 const NavBar = () => {
     return (
         <>
@@ -11,8 +11,8 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Link to="/categoria/alimentos">Alimentos</Link>
-                            <Link to="/categoria/juguetes">Juguetes</Link>
+                            <NavLink className={({ isActive }) => isActive ? 'btn-btn-success' : 'btn-btn-dark'} to="/categoria/alimentos">Alimentos</NavLink>
+                            <NavLink to="/categoria/juguetes">Juguetes</NavLink>
                             <NavDropdown title="Lista" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Gatos</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
